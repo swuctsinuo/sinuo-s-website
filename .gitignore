@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Thumbnails
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+
+# Logs
+logs
+*.log
+
+# Dependencies (if any)
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Backup folder
+personal-website-backup/
+personal-website-linear/
