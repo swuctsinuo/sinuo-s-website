@@ -297,12 +297,45 @@
         });
     }
 
+    // ===== Skills Marquee Animation =====
+    function initSkillsMarquee() {
+        const skillsSection = document.querySelector('.skills');
+        const marqueeTracks = document.querySelectorAll('.marquee-track');
+
+        if (!skillsSection || marqueeTracks.length === 0) return;
+
+        // Use Intersection Observer to control animation
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When skills section is visible, play animation
+                    marqueeTracks.forEach(track => {
+                        track.classList.remove('paused');
+                    });
+                } else {
+                    // When skills section is not visible, pause animation
+                    marqueeTracks.forEach(track => {
+                        track.classList.add('paused');
+                    });
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(skillsSection);
+    }
+
     // ===== Initialize Everything =====
     function init() {
         initParticleBackground();
         initNavigation();
         initScrollAnimations();
         initMobileMenu();
+        initSkillsMarquee();
     }
 
     // Run initialization when DOM is ready
