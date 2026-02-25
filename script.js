@@ -6,12 +6,73 @@
 
     // ===== DOM Elements =====
     const body = document.body;
+    const html = document.documentElement;
     const nav = document.querySelector('.glass-nav');
     const heroCanvas = document.getElementById('hero-canvas');
 
     // ===== State =====
     let mouseX = 0;
     let mouseY = 0;
+
+    // ===== Theme Toggle =====
+    function initThemeToggle() {
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Get saved theme or use system preference
+        const getSavedTheme = () => {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return prefersDark.matches ? 'dark' : 'light';
+        };
+
+        // Apply theme
+        const applyTheme = (theme) => {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+
+            // Swap hero background image based on theme
+            const heroBgImage = document.querySelector('.hero-bg-image');
+            if (heroBgImage) {
+                if (theme === 'light') {
+                    heroBgImage.src = 'images/hero-bg-light.png';
+                } else {
+                    heroBgImage.src = 'images/hero-bg.png';
+                }
+            }
+
+            // Update navigation background based on current scroll position
+            const nav = document.querySelector('.glass-nav');
+            if (nav) {
+                const currentScroll = window.pageYOffset;
+                const scrolled = currentScroll > 100;
+                if (theme === 'light') {
+                    nav.style.background = scrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    nav.style.background = scrolled ? 'rgba(10, 10, 15, 0.98)' : 'rgba(10, 10, 15, 0.8)';
+                }
+            }
+        };
+
+        // Initialize theme
+        applyTheme(getSavedTheme());
+
+        // Toggle theme on button click
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+        }
+
+        // Listen for system theme changes
+        prefersDark.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
 
     // ===== 3D Particle Background =====
     function initParticleBackground() {
@@ -33,7 +94,7 @@
             connectionDistance: isMobile ? 80 : 120,
             mouseDistance: 150,
             baseSpeed: isMobile ? 0.1 : 0.2,
-            colors: ['#8B5CF6', '#EC4899', '#06B6D4', '#A78BFA']
+            colors: ['#A78BFA', '#8B5CF6', '#C4B5FD', '#DDD6FE']
         };
 
         class Particle {
@@ -127,7 +188,7 @@
 
                     if (distance < config.connectionDistance) {
                         const opacity = (1 - distance / config.connectionDistance) * 0.3;
-                        ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
+                        ctx.strokeStyle = `rgba(167, 139, 250, ${opacity})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
@@ -187,15 +248,24 @@
     function initNavigation() {
         let lastScroll = 0;
 
+        // Get computed styles for theme-aware colors
+        const getNavBg = (scrolled) => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') {
+                return scrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.9)';
+            }
+            return scrolled ? 'rgba(10, 10, 15, 0.98)' : 'rgba(10, 10, 15, 0.8)';
+        };
+
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
 
             // Add/remove scrolled class
             if (currentScroll > 100) {
-                nav.style.background = 'rgba(10, 10, 15, 0.95)';
-                nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+                nav.style.background = getNavBg(true);
+                nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
             } else {
-                nav.style.background = 'rgba(10, 10, 15, 0.8)';
+                nav.style.background = getNavBg(false);
                 nav.style.boxShadow = 'none';
             }
 
@@ -331,6 +401,7 @@
 
     // ===== Initialize Everything =====
     function init() {
+        initThemeToggle();
         initParticleBackground();
         initNavigation();
         initScrollAnimations();
