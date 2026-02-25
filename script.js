@@ -31,6 +31,23 @@
             html.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
 
+            // Update theme-color meta tag for mobile browsers
+            const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+            if (themeColorMeta) {
+                themeColorMeta.setAttribute('content', theme === 'light' ? '#FFFFFF' : '#0A0A0F');
+            }
+
+            // Swap favicon based on theme
+            const favicon = document.querySelector('link[rel="icon"]');
+            const appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]');
+            if (theme === 'light') {
+                if (favicon) favicon.href = 'favicon-light.svg';
+                if (appleTouchIcon) appleTouchIcon.href = 'favicon-light.svg';
+            } else {
+                if (favicon) favicon.href = 'favicon-dark.svg';
+                if (appleTouchIcon) appleTouchIcon.href = 'favicon-dark.svg';
+            }
+
             // Swap hero background image based on theme
             const heroBgImage = document.querySelector('.hero-bg-image');
             if (heroBgImage) {

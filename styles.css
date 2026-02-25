@@ -249,12 +249,31 @@ img {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary-coral-light), var(--accent-pink));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(10deg);
 }
 
 .nav-links {
@@ -433,6 +452,10 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+[data-theme="light"] .logo-icon {
+    filter: hue-rotate(60deg) saturate(1.2);
 }
 
 /* Light theme keyword lines */
@@ -1470,6 +1493,11 @@ body.menu-open {
 
     .logo {
         font-size: 1.25rem;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
     }
 
     .hero {
