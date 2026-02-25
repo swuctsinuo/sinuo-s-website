@@ -416,6 +416,50 @@
         observer.observe(skillsSection);
     }
 
+    // ===== AI News Section =====
+    function initAINews() {
+        const newsGrid = document.getElementById('news-grid');
+        if (!newsGrid) return;
+
+        const newsData = [
+            {
+                date: "2026-02-20",
+                title: "Claude 3.7 Sonnet 发布",
+                summary: "Anthropic 发布 Claude 3.7 Sonnet，这是其迄今为止最智能的模型，在编程和复杂推理任务上表现出色，同时保持了快速的响应速度。",
+                link: "https://www.anthropic.com/news/claude-3-7-sonnet"
+            },
+            {
+                date: "2026-02-18",
+                title: "GPT-5 即将发布",
+                summary: "OpenAI 预计将在近期发布 GPT-5，据称该模型在多模态理解和长上下文处理方面有重大突破，支持超过 100万 token 的上下文窗口。",
+                link: "#"
+            },
+            {
+                date: "2026-02-15",
+                title: "DeepSeek V3 开源发布",
+                summary: "DeepSeek 发布 V3 模型并开源，该模型在编程和数学推理方面表现优异，成为开源大模型的新标杆。",
+                link: "https://github.com/deepseek-ai/DeepSeek-V3"
+            }
+        ];
+
+        newsGrid.innerHTML = newsData.map(news => `
+            <article class="news-card glass-card">
+                <div class="news-content">
+                    <span class="news-date">${news.date}</span>
+                    <h3 class="news-title">${news.title}</h3>
+                    <p class="news-summary">${news.summary}</p>
+                    <a href="${news.link}" target="_blank" class="news-link">
+                        阅读全文
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        `).join('');
+    }
+
     // ===== Initialize Everything =====
     function init() {
         initThemeToggle();
@@ -424,6 +468,7 @@
         initScrollAnimations();
         initMobileMenu();
         initSkillsMarquee();
+        initAINews();
     }
 
     // Run initialization when DOM is ready
