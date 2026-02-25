@@ -423,22 +423,22 @@
 
         const newsData = [
             {
-                date: "2026-02-20",
-                title: "Claude 3.7 Sonnet 发布",
-                summary: "Anthropic 发布 Claude 3.7 Sonnet，这是其迄今为止最智能的模型，在编程和复杂推理任务上表现出色，同时保持了快速的响应速度。",
-                link: "https://www.anthropic.com/news/claude-3-7-sonnet"
+                date: "2026-02-25",
+                title: "Claude Sonnet 4.6 发布",
+                summary: "Anthropic 发布 Claude Sonnet 4.6，作为 claude.ai 的新默认模型，在编码一致性方面表现更佳，SWE-bench 得分达到 79.6%，接近 Opus 级别性能但保持 Sonnet 定价。",
+                link: "https://www.cnbc.com/2026/02/17/anthropic-ai-claude-sonnet-4-6-default-free-pro.html"
             },
             {
-                date: "2026-02-18",
-                title: "GPT-5 即将发布",
-                summary: "OpenAI 预计将在近期发布 GPT-5，据称该模型在多模态理解和长上下文处理方面有重大突破，支持超过 100万 token 的上下文窗口。",
-                link: "#"
+                date: "2026-02-24",
+                title: "GPT-5.2 正式发布",
+                summary: "OpenAI 正式推出 GPT-5.2 模型，带来重大升级。该模型在多模态理解、长上下文处理和推理能力方面有显著提升，支持超百万 token 上下文窗口。",
+                link: "https://tech.yahoo.com/ai/chatgpt/articles/openai-just-released-gpt-5-141531710.html"
             },
             {
-                date: "2026-02-15",
-                title: "DeepSeek V3 开源发布",
-                summary: "DeepSeek 发布 V3 模型并开源，该模型在编程和数学推理方面表现优异，成为开源大模型的新标杆。",
-                link: "https://github.com/deepseek-ai/DeepSeek-V3"
+                date: "2026-02-23",
+                title: "DeepSeek 新模型即将发布",
+                summary: "中国 AI 公司 DeepSeek 即将发布新一代 AI 模型，预计将在编程和数学推理方面继续领先，可能对全球 AI 市场格局产生重要影响。",
+                link: "https://www.cnbc.com/2026/02/23/deepseek-to-release-new-ai-model-a-rough-period-for-nasdaq-stocks-could-follow.html"
             }
         ];
 
