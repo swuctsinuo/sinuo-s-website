@@ -417,11 +417,10 @@
     }
 
     // ===== AI News Section =====
+[2026-02-25 13:08:49] Fetching real AI news...
     function initAINews() {
         const newsGrid = document.getElementById('news-grid');
         if (!newsGrid) return;
-
-/tmp/news_data_276097
 
         newsGrid.innerHTML = newsData.map(news => `
             <article class="news-card glass-card">
