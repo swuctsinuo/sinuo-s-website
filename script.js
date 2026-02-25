@@ -424,33 +424,39 @@
         const newsData = [
             {
                 date: "2026-02-25",
-                title: "GPT-5.3-Codex 正式发布",
-                summary: "OpenAI 今日发布 GPT-5.3-Codex，这是首个能够自我改进的AI模型。新模型在推理速度上提升25%，并在代码生成、多模态理解方面有重大突破，标志着AI进入自我演进时代。",
-                link: "https://www.androidheadlines.com/2026/02/gpt-5-3-codex-openai-launch-self-improving-ai.html"
+                title: "阿里巴巴发布 Qwen3-Max-Thinking",
+                summary: "阿里巴巴云发布最新AI模型 Qwen3-Max-Thinking，在19个基准测试中表现与 GPT-5.2-Thinking、Claude-Opus-4.5 和 Gemini 3 Pro 相当。该模型具备自适应工具使用和测试时扩展技术，专注于企业级AI应用。",
+                link: "https://www.infoworld.com/article/4122696/alibabas-qwen3-max-thinking-expands-enterprise-ai-model-choices.html"
             },
             {
-                date: "2026-02-25",
-                title: "Claude Opus 4.6 登顶EVMbench",
-                summary: "Anthropic 发布 Claude Opus 4.6，在OpenAI的EVMbench测试中排名第一，超越GPT-5和Gemini 3 Pro。该模型在120个真实加密货币漏洞测试中表现最佳，展现了强大的安全编码能力。",
-                link: "https://blockonomi.com/openai-evmbench-results-how-claude-gpt-5-and-gemini-ranked-on-crypto-security/"
+                date: "2026-02-24",
+                title: "AI芯片投资机会显现",
+                summary: "除NVIDIA外，多家AI芯片公司预计在2月25日后股价将大幅上涨。随着GPT-5.3和Qwen3.5等大模型对算力需求激增，专用AI芯片市场迎来新的增长机遇。",
+                link: "https://www.fool.com/investing/2026/02/24/predict-artificial-intelligence-ai-chip-stock-nvda/"
             },
             {
-                date: "2026-02-25",
-                title: "阿里巴巴推出Qwen3.5开源模型",
-                summary: "阿里巴巴今日发布Qwen3.5，这是一个3970亿参数的混合专家模型，每次推理仅激活170亿参数，实现60%的推理成本降低。该模型专为代理时代设计，能独立执行复杂任务。",
+                date: "2026-02-18",
+                title: "阿里巴巴推出 Qwen3.5 开源模型",
+                summary: "阿里巴巴发布 Qwen3.5，这是一个3970亿参数的混合专家模型，每次推理仅激活170亿神经元，实现60%更低的推理成本，专为自主执行复杂任务而设计。",
                 link: "https://seekingalpha.com/news/4552258-alibaba-introduces-new-ai-model-qwen35-for-agentic-era"
             },
             {
-                date: "2026-02-25",
-                title: "中国开源AI模型引领全球",
-                summary: "最新报告显示，全球顶尖开源AI模型主要来自中国，包括DeepSeek、Moonshot等。美国初创公司Arcee AI正寻求超10亿美元融资，试图通过训练万亿参数模型重新夺回开源领域的领先地位。",
-                link: "https://www.forbes.com/sites/annatong/2026/02/02/the-top-open-ai-models-are-chinese-arcee-ai-thinks-thats-a-problem/"
+                date: "2026-02-12",
+                title: "GPT-5.3-Codex 正式发布",
+                summary: "OpenAI 发布 GPT-5.3-Codex，这是其最新一代AI模型，具有25%更快的推理速度，并且在开发过程中帮助构建了自身。该模型专为代码生成和复杂任务自动化而优化，标志着AI进入自主代理时代。",
+                link: "https://www.androidheadlines.com/2026/02/gpt-5-3-codex-openai-launch-self-improving-ai.html"
             },
             {
-                date: "2026-02-25",
-                title: "AI芯片竞争格局重塑",
-                summary: "除NVIDIA外，多家AI芯片公司预计在2月25日后股价将大幅上涨。随着GPT-5.3和Qwen3.5等大模型对算力需求激增，专用AI芯片市场迎来新的增长机遇。",
-                link: "https://www.fool.com/investing/2026/02/24/predict-artificial-intelligence-ai-chip-stock-nvda/"
+                date: "2026-02-12",
+                title: "Claude Opus 4.6 登顶 EVMbench",
+                summary: "Anthropic 发布 Claude Opus 4.6，在 OpenAI 的 EVMbench 测试中排名第一，超越 GPT-5 和 Gemini 3 Pro，在120个真实加密漏洞测试中表现最佳，特别擅长智能合约安全分析。",
+                link: "https://blockonomi.com/openai-evmbench-results-how-claude-gpt-5-and-gemini-ranked-on-crypto-security/"
+            },
+            {
+                date: "2026-02-02",
+                title: "中国开源AI模型引领全球",
+                summary: "当前顶级开源AI模型主要来自中国，包括 DeepSeek、Moonshot 等实验室。美国初创公司 Arcee AI 正寻求超10亿美元估值融资，以训练万亿参数模型夺回开源领先地位。",
+                link: "https://www.forbes.com/sites/annatong/2026/02/02/the-top-open-ai-models-are-chinese-arcee-ai-thinks-thats-a-problem/"
             }
         ];
 
