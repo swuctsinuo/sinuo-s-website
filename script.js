@@ -421,38 +421,7 @@
         const newsGrid = document.getElementById('news-grid');
         if (!newsGrid) return;
 
-        const newsData = [
-            {
-                date: "2026-02-12",
-                title: "GPT-5.3-Codex 正式发布",
-                summary: "OpenAI 发布 GPT-5.3-Codex，这是其最新一代AI模型，具有25%更快的推理速度，并且在开发过程中帮助构建了自身。该模型专为代码生成和复杂任务自动化而优化，标志着AI进入自主代理时代。",
-                link: "https://www.androidheadlines.com/2026/02/gpt-5-3-codex-openai-launch-self-improving-ai.html"
-            },
-            {
-                date: "2026-02-12",
-                title: "Claude Opus 4.6 登顶 EVMbench",
-                summary: "Anthropic 发布 Claude Opus 4.6，在 OpenAI 的 EVMbench 测试中排名第一，超越 GPT-5 和 Gemini 3 Pro，在120个真实加密漏洞测试中表现最佳，特别擅长智能合约安全分析。",
-                link: "https://blockonomi.com/openai-evmbench-results-how-claude-gpt-5-and-gemini-ranked-on-crypto-security/"
-            },
-            {
-                date: "2026-02-18",
-                title: "阿里巴巴推出 Qwen3.5 开源模型",
-                summary: "阿里巴巴发布 Qwen3.5，这是一个3970亿参数的混合专家模型，每次推理仅激活170亿神经元，实现60%更低的推理成本，专为自主执行复杂任务而设计。",
-                link: "https://seekingalpha.com/news/4552258-alibaba-introduces-new-ai-model-qwen35-for-agentic-era"
-            },
-            {
-                date: "2026-02-02",
-                title: "中国开源AI模型引领全球",
-                summary: "当前顶级开源AI模型主要来自中国，包括 DeepSeek、Moonshot 等实验室。美国初创公司 Arcee AI 正寻求超10亿美元估值融资，以训练万亿参数模型夺回开源领先地位。",
-                link: "https://www.forbes.com/sites/annatong/2026/02/02/the-top-open-ai-models-are-chinese-arcee-ai-thinks-thats-a-problem/"
-            },
-            {
-                date: "2026-02-24",
-                title: "AI芯片竞争格局重塑",
-                summary: "除NVIDIA外，多家AI芯片公司预计在2月25日后股价将大幅上涨。随着GPT-5.3和Qwen3.5等大模型对算力需求激增，专用AI芯片市场迎来新的增长机遇。",
-                link: "https://www.fool.com/investing/2026/02/24/predict-artificial-intelligence-ai-chip-stock-nvda/"
-            }
-        ];
+/tmp/news_data_276097
 
         newsGrid.innerHTML = newsData.map(news => `
             <article class="news-card glass-card">
