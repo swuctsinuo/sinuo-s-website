@@ -1009,6 +1009,83 @@ section {
     line-height: 1.7;
 }
 
+/* Image Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+}
+
+/* Light theme carousel overlay */
+[data-theme="light"] .image-glass-overlay {
+    background: rgba(167, 139, 250, 0.02);
+}
+
+/* Carousel dots */
+.carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.2);
+}
+
+[data-theme="light"] .carousel-dot {
+    background: rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="light"] .carousel-dot.active {
+    background: rgba(139, 92, 246, 0.9);
+}
+
 /* ===== Reading Section ===== */
 .reading {
     background: var(--bg-primary);

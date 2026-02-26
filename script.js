@@ -430,7 +430,7 @@
             },
             {
                 date: "2026-02-25",
-                title: "Open Source AI Growth", 
+                title: "Open Source AI Growth",
                 summary: "Open source AI models are gaining significant traction, with Chinese labs leading innovation in certain areas.",
                 link: "https://example.com/open-source-ai"
             },
@@ -460,6 +460,70 @@
         `).join('');
     }
 
+    // ===== Image Carousel =====
+    function initCarousel() {
+        const carousels = document.querySelectorAll('.carousel');
+
+        carousels.forEach(carousel => {
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            const track = carousel.querySelector('.carousel-track');
+            const slides = track ? track.querySelectorAll('.carousel-slide') : [];
+
+            if (dots.length === 0 || slides.length === 0) return;
+
+            let currentSlide = 0;
+            let autoRotateTimer = null;
+            const slideInterval = 4000; // 4 seconds per slide
+
+            // Go to specific slide
+            function goToSlide(index) {
+                currentSlide = index;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                updateDots(currentSlide);
+            }
+
+            // Update active dot
+            function updateDots(index) {
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            // Next slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                goToSlide(currentSlide);
+            }
+
+            // Start auto-rotation
+            function startAutoRotate() {
+                stopAutoRotate();
+                autoRotateTimer = setInterval(nextSlide, slideInterval);
+            }
+
+            // Stop auto-rotation
+            function stopAutoRotate() {
+                if (autoRotateTimer) {
+                    clearInterval(autoRotateTimer);
+                    autoRotateTimer = null;
+                }
+            }
+
+            // Click on dots to switch slides
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    // Reset auto-rotation timer after manual click
+                    startAutoRotate();
+                });
+            });
+
+            // Initialize
+            goToSlide(0);
+            startAutoRotate();
+        });
+    }
+
     // ===== Initialize Everything =====
     function init() {
         initThemeToggle();
@@ -469,6 +533,7 @@
         initMobileMenu();
         initSkillsMarquee();
         initAINews();
+        initCarousel();
     }
 
     // Run initialization when DOM is ready
