@@ -346,14 +346,15 @@
     function initMobileMenu() {
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
+        const navActions = document.querySelector('.nav-actions');
 
         if (!menuBtn || !navLinks) return;
 
         // Toggle menu
-        menuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             menuBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
-            body.classList.toggle('menu-open');
         });
 
         // Close menu on link click
@@ -361,7 +362,6 @@
             link.addEventListener('click', () => {
                 menuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
-                body.classList.remove('menu-open');
             });
         });
 
@@ -370,16 +370,16 @@
             if (e.key === 'Escape' && navLinks.classList.contains('active')) {
                 menuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
-                body.classList.remove('menu-open');
             }
         });
 
         // Close menu when clicking outside
-        navLinks.addEventListener('click', (e) => {
-            if (e.target === navLinks) {
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') &&
+                !navLinks.contains(e.target) &&
+                !menuBtn.contains(e.target)) {
                 menuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
-                body.classList.remove('menu-open');
             }
         });
     }
