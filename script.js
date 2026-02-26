@@ -423,22 +423,22 @@
 
         const newsData = [
             {
-                date: "2026-02-25",
-                title: "AI Model Advancements",
-                summary: "The AI landscape continues to evolve rapidly with new model releases and breakthroughs in reasoning capabilities.",
-                link: "https://example.com/ai-news"
+                date: "2026-02-26",
+                title: "AI Is Now Building Itself: Yet The Verification Layer Is Missing",
+                summary: "AI systems are beginning to build and improve themselves. But without a verification layer, trust, safety and accountability may struggle to keep pace.",
+                link: "https://www.forbes.com/sites/digital-assets/2026/02/26/ai-is-now-building-itself-yet-the-verification-layer-is-missing/"
             },
             {
-                date: "2026-02-25",
-                title: "Open Source AI Growth",
-                summary: "Open source AI models are gaining significant traction, with Chinese labs leading innovation in certain areas.",
-                link: "https://example.com/open-source-ai"
+                date: "2026-02-26",
+                title: "Wall Street turns to complex trades to dodge AI 'implosions'",
+                summary: "Some of Wall Street's biggest players are turning to complex options and hedging strategies to navigate a market buffeted by blog posts and headlines that have recently wiped tens of billions of dollars off the value of some of the S&P 500's largest tech groups.",
+                link: "https://www.ft.com/content/dede31ed-6b85-4e12-b9c9-3bfbd4449d75"
             },
             {
-                date: "2026-02-24",
-                title: "Enterprise AI Adoption",
-                summary: "Enterprises are increasingly adopting multi-model strategies to balance performance, cost, and geopolitical considerations.",
-                link: "https://example.com/enterprise-ai"
+                date: "2026-02-26",
+                title: "Artificial Intelligencer: The hottest job in AI right now",
+                summary: "This was originally published in the Artificial Intelligencer newsletter, which is issued every Wednesday. Sign up here to learn about the latest breakthroughs in AI and tech.",
+                link: "https://www.reuters.com/technology/artificial-intelligence/artificial-intelligencer-hottest-job-ai-right-now-2026-02-26/"
             }
         ];
 
