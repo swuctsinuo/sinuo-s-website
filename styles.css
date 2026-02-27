@@ -1076,15 +1076,26 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     pointer-events: none;
+}
+
+/* Strong blur variant for sensitive content */
+.image-glass-overlay.blur-strong {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 /* Light theme carousel overlay */
 [data-theme="light"] .image-glass-overlay {
-    background: rgba(167, 139, 250, 0.02);
+    background: rgba(167, 139, 250, 0.015);
+}
+
+[data-theme="light"] .image-glass-overlay.blur-strong {
+    background: rgba(167, 139, 250, 0.03);
 }
 
 /* Carousel dots */
