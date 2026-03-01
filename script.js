@@ -14,6 +14,90 @@
     let mouseX = 0;
     let mouseY = 0;
 
+    // ===== Page Loader =====
+    function hideLoader() {
+        const loader = document.querySelector('.page-loader');
+        if (loader) {
+            loader.classList.add('hidden');
+            // Remove loader from DOM after transition
+            setTimeout(() => {
+                loader.remove();
+            }, 500);
+        }
+    }
+
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', () => {
+        // Minimum display time for loader (1.5 seconds)
+        setTimeout(hideLoader, 1500);
+    });
+
+    // ===== Custom Cursor =====
+    function initCustomCursor() {
+        const cursorGlow = document.querySelector('.cursor-glow');
+        const cursorDot = document.querySelector('.cursor-dot');
+
+        if (!cursorGlow || !cursorDot) return;
+
+        // Check if device supports hover (not touch device)
+        const supportsHover = window.matchMedia('(hover: hover)').matches;
+        if (!supportsHover) return;
+
+        // Show cursor
+        cursorGlow.classList.add('active');
+        cursorDot.classList.add('active');
+
+        let cursorX = 0;
+        let cursorY = 0;
+        let glowX = 0;
+        let glowY = 0;
+
+        // Update cursor position on mouse move
+        document.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+
+            // Update dot position immediately
+            cursorDot.style.left = cursorX + 'px';
+            cursorDot.style.top = cursorY + 'px';
+        });
+
+        // Smooth glow follow animation
+        function animateGlow() {
+            glowX += (cursorX - glowX) * 0.1;
+            glowY += (cursorY - glowY) * 0.1;
+
+            cursorGlow.style.left = glowX + 'px';
+            cursorGlow.style.top = glowY + 'px';
+
+            requestAnimationFrame(animateGlow);
+        }
+        animateGlow();
+
+        // Add hover effect on interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .glass-card, .skill-tag, input, textarea');
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('cursor-hover');
+            });
+        });
+
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursorGlow.style.display = 'none';
+            cursorDot.style.display = 'none';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursorGlow.style.display = 'block';
+            cursorDot.style.display = 'block';
+        });
+    }
+
     // ===== Theme Toggle =====
     function initThemeToggle() {
         const themeToggle = document.querySelector('.theme-toggle');
@@ -534,6 +618,7 @@
         initSkillsMarquee();
         initAINews();
         initCarousel();
+        initCustomCursor();
     }
 
     // Run initialization when DOM is ready
