@@ -312,31 +312,9 @@
 }
 
 /* ===== Custom Cursor Glow ===== */
-.cursor-glow {
-    display: none !important;
-}
-
+.cursor-glow,
 .cursor-dot {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    background: #FF7B72;
-    box-shadow: 0 0 8px rgba(255, 123, 114, 0.4);
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
-.cursor-dot.active {
-    display: block;
-}
-
-/* Light theme cursor */
-[data-theme="light"] .cursor-dot {
-    background: #8B5CF6;
-    box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+    display: none !important;
 }
 
 [data-theme="light"] .loader-text {
@@ -362,7 +340,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: none;
 }
 
 /* Light theme body background */
