@@ -1563,6 +1563,36 @@ section {
     font-size: 0.9rem;
 }
 
+/* ===== Easter Egg Section ===== */
+.easter-egg {
+    padding: var(--space-lg) 0 var(--space-xl);
+    text-align: center;
+}
+
+.easter-egg-text {
+    font-size: 0.8rem;
+    line-height: 2;
+    color: var(--text-muted);
+    opacity: 0.25;
+    transition: opacity 0.5s ease, color 0.5s ease;
+    cursor: default;
+}
+
+.easter-egg-text:hover {
+    opacity: 1;
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .easter-egg-text {
+    opacity: 0.2;
+    color: #888;
+}
+
+[data-theme="light"] .easter-egg-text:hover {
+    opacity: 1;
+    color: #333;
+}
+
 /* ===== Responsive Design ===== */
 
 /* ===== Mobile Navigation Menu ===== */
