@@ -507,22 +507,22 @@
 
         const newsData = [
             {
-                date: "2026-02-26",
-                title: "AI Is Now Building Itself: Yet The Verification Layer Is Missing",
-                summary: "AI systems are beginning to build and improve themselves. But without a verification layer, trust, safety and accountability may struggle to keep pace.",
-                link: "https://www.forbes.com/sites/digital-assets/2026/02/26/ai-is-now-building-itself-yet-the-verification-layer-is-missing/"
+                date: "2026-03-10",
+                title: "Anthropic Sues Department of Defense Over 'Supply Chain Risk' Label",
+                summary: "Anthropic has filed a lawsuit against the U.S. Department of Defense challenging its designation as a 'supply chain risk,' marking a significant escalation in the ongoing tension between AI companies and government defense agencies.",
+                link: "https://www.nytimes.com/2026/03/09/technology/anthropic-pentagon-lawsuit-ai.html"
             },
             {
-                date: "2026-02-26",
-                title: "Wall Street turns to complex trades to dodge AI 'implosions'",
-                summary: "Some of Wall Street's biggest players are turning to complex options and hedging strategies to navigate a market buffeted by blog posts and headlines that have recently wiped tens of billions of dollars off the value of some of the S&P 500's largest tech groups.",
-                link: "https://www.ft.com/content/dede31ed-6b85-4e12-b9c9-3bfbd4449d75"
+                date: "2026-03-10",
+                title: "Ex-Meta AI Chief Yann LeCun's AMI Labs Raises $1.03 Billion to Develop AI World Models",
+                summary: "Yann LeCun's Paris-based startup Advance Machine Intelligence has secured $1.03 billion in funding to build AI world models, representing one of the largest AI investments of 2026.",
+                link: "https://www.theguardian.com/technology/2026/mar/10/yann-lecun-ami-labs-funding-ai"
             },
             {
-                date: "2026-02-26",
-                title: "Artificial Intelligencer: The hottest job in AI right now",
-                summary: "This was originally published in the Artificial Intelligencer newsletter, which is issued every Wednesday. Sign up here to learn about the latest breakthroughs in AI and tech.",
-                link: "https://www.reuters.com/technology/artificial-intelligence/artificial-intelligencer-hottest-job-ai-right-now-2026-02-26/"
+                date: "2026-03-10",
+                title: "Nvidia Plans Open-Source AI Agent Platform NemoClaw",
+                summary: "Nvidia is reportedly developing an open-source AI agent platform called NemoClaw, aiming to democratize AI agent development and compete with proprietary solutions.",
+                link: "https://invezz.com/news/2026/03/10/nvidia-nemoclaw-ai-agent-platform/"
             }
         ];
 
