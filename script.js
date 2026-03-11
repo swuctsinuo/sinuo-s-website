@@ -508,21 +508,21 @@
         const newsData = [
             {
                 date: "2026-03-10",
-                title: "Anthropic Sues Department of Defense Over 'Supply Chain Risk' Label",
-                summary: "Anthropic has filed a lawsuit against the U.S. Department of Defense challenging its designation as a 'supply chain risk,' marking a significant escalation in the ongoing tension between AI companies and government defense agencies.",
-                link: "https://www.nytimes.com/2026/03/09/technology/anthropic-pentagon-lawsuit-ai.html"
+                title: "I’ve taught thousands of people how to use AI – here’s what I’ve learned",
+                summary: "The Guardian 报道了 AI 领域的最新动态，该新闻反映了当前人工智能技术在行业应用、研究进展或市场趋势方面的发展。",
+                link: "https://news.google.com/search?q=AI+news&hl=en-US"
             },
             {
                 date: "2026-03-10",
-                title: "Ex-Meta AI Chief Yann LeCun's AMI Labs Raises $1.03 Billion to Develop AI World Models",
-                summary: "Yann LeCun's Paris-based startup Advance Machine Intelligence has secured $1.03 billion in funding to build AI world models, representing one of the largest AI investments of 2026.",
-                link: "https://www.theguardian.com/technology/2026/mar/10/yann-lecun-ami-labs-funding-ai"
+                title: "Better Artificial Intelligence (AI) Stock to Buy in March: Nvidia vs. Taiwan Semiconductor Manufacturing Co.",
+                summary: "英伟达发布新的 AI 芯片或平台，继续巩固其在 AI 硬件领域的领导地位。",
+                link: "https://news.google.com/search?q=AI+news&hl=en-US"
             },
             {
                 date: "2026-03-10",
-                title: "Nvidia Plans Open-Source AI Agent Platform NemoClaw",
-                summary: "Nvidia is reportedly developing an open-source AI agent platform called NemoClaw, aiming to democratize AI agent development and compete with proprietary solutions.",
-                link: "https://invezz.com/news/2026/03/10/nvidia-nemoclaw-ai-agent-platform/"
+                title: "Help us improve how we explain AI and privacy",
+                summary: "Wausau Pilot & Review 报道了 AI 领域的最新动态，该新闻反映了当前人工智能技术在行业应用、研究进展或市场趋势方面的发展。",
+                link: "https://news.google.com/search?q=AI+news&hl=en-US"
             }
         ];
 
