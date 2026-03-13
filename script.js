@@ -661,9 +661,8 @@
                 // For demo purposes, we'll simulate a delay
                 await new Promise(resolve => setTimeout(resolve, 1500));
 
-                // Show success message
-                formFeedback.classList.remove('hidden');
-                submitBtn.style.display = 'none';
+                // Add success state to card for full-card transform animation
+                memoryCard.classList.add('success-state');
 
             } catch (error) {
                 console.error('Submission error:', error);

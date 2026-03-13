@@ -422,21 +422,20 @@
             <!-- Two Column Layout -->
             <div class="guestroom-grid">
                 <!-- Left: Collaborative Memory -->
-                <div class="guestroom-card glass-card">
-                    <div class="guestroom-header">
-                        <span class="guestroom-icon">
+                <div class="memory-card">
+                    <div class="memory-header">
+                        <span class="memory-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 2a10 10 0 1 0 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path>
                                 <path d="M12 6v6l4 2"></path>
                             </svg>
                         </span>
                         <div>
-                            <h3 class="guestroom-title">Collaborative Memory</h3>
-                            <p class="guestroom-subtitle">协同记忆</p>
+                            <h3 class="memory-title">Collaborative Memory</h3>
+                            <p class="memory-subtitle">协同记忆</p>
                         </div>
                     </div>
-                    <p class="guestroom-tagline">"把你的视角，变成我的记忆。"</p>
-                    <p class="guestroom-description">
+                    <p class="memory-description">
                         欢迎分享你观察到的行业 Bad Case、前沿论文链接或灵感。筛选后的信息将作为 Markdown 语料进入我的向量知识库，参与我"数字大脑"的逻辑对齐。
                     </p>
 
@@ -448,16 +447,16 @@
                             <span class="form-tag active" data-value="自由话题">自由话题</span>
                         </div>
                         <div class="form-group">
-                            <label for="guest-name">称呼/昵称 <span class="optional">(可选)</span></label>
-                            <input type="text" id="guest-name" name="name" placeholder="anonymous_user">
+                            <label class="form-label" for="guest-name">称呼/昵称 <span class="optional">(可选)</span></label>
+                            <input type="text" class="form-input" id="guest-name" name="name" placeholder="anonymous_user">
                         </div>
                         <div class="form-group">
-                            <label for="guest-email">邮箱 <span class="optional">(可选)</span></label>
-                            <input type="email" id="guest-email" name="email" placeholder="your@email.com">
+                            <label class="form-label" for="guest-email">邮箱 <span class="optional">(可选)</span></label>
+                            <input type="email" class="form-input" id="guest-email" name="email" placeholder="your@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="guest-message">留言内容 <span class="required">*</span></label>
-                            <textarea id="guest-message" name="message" rows="4" placeholder="分享你的知识、见解或链接..." required></textarea>
+                            <label class="form-label" for="guest-message">留言内容 <span class="required">*</span></label>
+                            <textarea class="form-textarea" id="guest-message" name="message" rows="4" placeholder="分享你的知识、见解或链接..." required></textarea>
                         </div>
                         <button type="submit" class="sync-btn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
@@ -466,11 +465,20 @@
                             </svg>
                             执行同步 (Sync)
                         </button>
-                        <div id="form-feedback" class="form-feedback hidden">
-                            <span class="feedback-icon">✓</span>
-                            <span class="feedback-text">Memory synchronized.<br>Thank you for your contribution.</span>
-                        </div>
                     </form>
+
+                    <!-- Success Card (hidden by default) -->
+                    <div class="success-card">
+                        <div class="success-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                        </div>
+                        <div class="success-text">
+                            Memory synchronized.<br>
+                            Thank you for your contribution.
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right: Direct Connection -->
