@@ -608,6 +608,99 @@
         });
     }
 
+    // ===== Collaborative Memory Form =====
+    function initMemoryForm() {
+        const form = document.getElementById('memory-form');
+        if (!form) return;
+
+        const formTags = form.querySelectorAll('.form-tag');
+        const submitBtn = form.querySelector('.sync-btn');
+        const formFeedback = document.getElementById('form-feedback');
+
+        if (!submitBtn || !formFeedback) return;
+
+        let selectedCategory = '自由话题';
+
+        // Form tag selection
+        formTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                formTags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                selectedCategory = tag.dataset.value;
+            });
+        });
+
+        // Form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('guest-name');
+            const emailInput = document.getElementById('guest-email');
+            const messageInput = document.getElementById('guest-message');
+
+            const name = nameInput ? nameInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const message = messageInput ? messageInput.value.trim() : '';
+
+            if (!message) {
+                alert('请输入留言内容');
+                return;
+            }
+
+            // Disable button and show loading
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="loading-spinner"></div>';
+
+            try {
+                // Create issue body for logging
+                const issueBody = `## 分类: ${selectedCategory}\n\n**称呼:** ${name || '匿名用户'}\n**邮箱:** ${email || '未提供'}\n\n**留言内容:**\n${message}\n\n---\n*Submitted from The Digital Guestroom at ${new Date().toLocaleString('zh-CN')}*`;
+                console.log('Memory submission:', issueBody);
+
+                // Note: For GitHub Issues API, you would need a server-side proxy or GitHub App
+                // For demo purposes, we'll simulate a delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Show success message
+                formFeedback.classList.remove('hidden');
+                submitBtn.style.display = 'none';
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('提交失败，请稍后重试');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+            }
+        });
+    }
+
+    // ===== Copy to Clipboard =====
+    function initCopyToClipboard() {
+        const copyItems = document.querySelectorAll('.contact-link-item');
+
+        copyItems.forEach(item => {
+                item.addEventListener('click', async () => {
+                    const value = item.dataset.copy;
+                    if (!value) return;
+
+                    try {
+                        await navigator.clipboard.writeText(value);
+
+                        // Show feedback
+                        const hint = item.querySelector('.copy-hint');
+                        if (hint) {
+                            hint.textContent = '已复制!';
+                            setTimeout(() => {
+                                hint.textContent = 'Click to copy';
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Copy failed:', err);
+                    }
+                });
+            });
+    }
+
     // ===== Initialize Everything =====
     function init() {
         initThemeToggle();
@@ -619,6 +712,8 @@
         initAINews();
         initCarousel();
         initCustomCursor();
+        initMemoryForm();
+        initCopyToClipboard();
     }
 
     // Run initialization when DOM is ready

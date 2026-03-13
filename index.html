@@ -414,29 +414,96 @@
                 <h2 class="section-title">The Digital Guestroom</h2>
                 <p class="section-subtitle">数字会客厅</p>
             </div>
-            <div class="contact-content-centered">
-                <div class="contact-info-card glass-card">
-                    <div class="contact-item-large">
-                        <span class="contact-icon">
+            <!-- Slogan -->
+            <p class="guestroom-slogan">
+                所有的交互都是为了更好的对齐。你可以选择注入数据来进化我的分身，或者直接通过下方的链路与我本人对话。
+            </p>
+
+            <!-- Two Column Layout -->
+            <div class="guestroom-grid">
+                <!-- Left: Collaborative Memory -->
+                <div class="guestroom-card glass-card">
+                    <div class="guestroom-header">
+                        <span class="guestroom-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
+                                <path d="M12 2a10 10 0 1 0 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path>
+                                <path d="M12 6v6l4 2"></path>
                             </svg>
                         </span>
-                        <div class="contact-text">
-                            <span class="contact-label">Email</span>
-                            <span class="contact-value">swuct@connect.ust.hk</span>
+                        <div>
+                            <h3 class="guestroom-title">Collaborative Memory</h3>
+                            <p class="guestroom-subtitle">协同记忆</p>
                         </div>
                     </div>
-                    <div class="contact-item-large">
-                        <span class="contact-icon">
+                    <p class="guestroom-tagline">"把你的视角，变成我的记忆。"</p>
+                    <p class="guestroom-description">
+                        欢迎分享你观察到的行业 Bad Case、前沿论文链接或灵感。筛选后的信息将作为 Markdown 语料进入我的向量知识库，参与我"数字大脑"的逻辑对齐。
+                    </p>
+
+                    <form id="memory-form" class="memory-form">
+                        <div class="form-tags">
+                            <span class="form-tag" data-value="AI/LLM">AI/LLM</span>
+                            <span class="form-tag" data-value="产品方法论">产品方法论</span>
+                            <span class="form-tag" data-value="论文分享">论文分享</span>
+                            <span class="form-tag active" data-value="自由话题">自由话题</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="guest-name">称呼/昵称 <span class="optional">(可选)</span></label>
+                            <input type="text" id="guest-name" name="name" placeholder="anonymous_user">
+                        </div>
+                        <div class="form-group">
+                            <label for="guest-email">邮箱 <span class="optional">(可选)</span></label>
+                            <input type="email" id="guest-email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="guest-message">留言内容 <span class="required">*</span></label>
+                            <textarea id="guest-message" name="message" rows="4" placeholder="分享你的知识、见解或链接..." required></textarea>
+                        </div>
+                        <button type="submit" class="sync-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+                                <path d="M21 3v5h-5"></path>
+                            </svg>
+                            执行同步 (Sync)
+                        </button>
+                        <div id="form-feedback" class="form-feedback hidden">
+                            <span class="feedback-icon">✓</span>
+                            <span class="feedback-text">Memory synchronized.<br>Thank you for your contribution.</span>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right: Direct Connection -->
+                <div class="guestroom-card glass-card">
+                    <div class="guestroom-header">
+                        <span class="guestroom-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                         </span>
-                        <div class="contact-text">
-                            <span class="contact-label">Phone</span>
-                            <span class="contact-value">173 6852 3822</span>
+                        <div>
+                            <h3 class="guestroom-title">Direct Connection</h3>
+                            <p class="guestroom-subtitle">直接联络</p>
+                        </div>
+                    </div>
+                    <p class="guestroom-tagline">"与我实时对齐。"</p>
+
+                    <div class="contact-links">
+                        <div class="contact-link-item" data-copy="swuct@connect.ust.hk">
+                            <span class="contact-link-icon">📧</span>
+                            <div class="contact-link-text">
+                                <span class="contact-link-label">Email</span>
+                                <span class="contact-link-value">swuct@connect.ust.hk</span>
+                            </div>
+                            <span class="copy-hint">Click to copy</span>
+                        </div>
+                        <div class="contact-link-item" data-copy="+86 173 6852 3822">
+                            <span class="contact-link-icon">📱</span>
+                            <div class="contact-link-text">
+                                <span class="contact-link-label">Phone</span>
+                                <span class="contact-link-value">+86 173 6852 3822</span>
+                            </div>
+                            <span class="copy-hint">Click to copy</span>
                         </div>
                     </div>
                 </div>
