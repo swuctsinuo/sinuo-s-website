@@ -615,7 +615,7 @@
 
         // EmailJS Configuration - Replace with your own keys
         const EMAILJS_PUBLIC_KEY = 'RO5CZO2-pDosL1sGB';        // EmailJS Public Key
-        const EMAILJS_SERVICE_ID = 'service_jo3id0m';      // EmailJS Service ID
+        const EMAILJS_SERVICE_ID = 'service_1ufl6gb';      // EmailJS Service ID
         const EMAILJS_TEMPLATE_ID = 'template_lz9cb9z';    // EmailJS Template ID
 
         // Initialize EmailJS
