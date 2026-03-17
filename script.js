@@ -613,11 +613,21 @@
         const form = document.getElementById('memory-form');
         if (!form) return;
 
+        // EmailJS Configuration - Replace with your own keys
+        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';      // 从 EmailJS 获取
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';      // 从 EmailJS 获取
+        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';    // 从 EmailJS 获取
+
+        // Initialize EmailJS
+        if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+        }
+
         const formTags = form.querySelectorAll('.form-tag');
         const submitBtn = form.querySelector('.sync-btn');
-        const formFeedback = document.getElementById('form-feedback');
+        const memoryCard = form.closest('.memory-card');
 
-        if (!submitBtn || !formFeedback) return;
+        if (!submitBtn || !memoryCard) return;
 
         let selectedCategory = '自由话题';
 
@@ -653,13 +663,25 @@
             submitBtn.innerHTML = '<div class="loading-spinner"></div>';
 
             try {
-                // Create issue body for logging
-                const issueBody = `## 分类: ${selectedCategory}\n\n**称呼:** ${name || '匿名用户'}\n**邮箱:** ${email || '未提供'}\n\n**留言内容:**\n${message}\n\n---\n*Submitted from The Digital Guestroom at ${new Date().toLocaleString('zh-CN')}*`;
-                console.log('Memory submission:', issueBody);
+                // Prepare email template parameters
+                const templateParams = {
+                    from_name: name || '匿名用户',
+                    from_email: email || '未提供',
+                    category: selectedCategory,
+                    message: message,
+                    to_email: 'swuct@connect.ust.hk',
+                    submit_time: new Date().toLocaleString('zh-CN')
+                };
 
-                // Note: For GitHub Issues API, you would need a server-side proxy or GitHub App
-                // For demo purposes, we'll simulate a delay
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                // Send email via EmailJS (if configured)
+                if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+                    console.log('Email sent successfully');
+                } else {
+                    // Fallback: just log to console for demo
+                    console.log('Memory submission (demo mode):', templateParams);
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                }
 
                 // Add success state to card for full-card transform animation
                 memoryCard.classList.add('success-state');
