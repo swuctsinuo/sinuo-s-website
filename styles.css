@@ -2141,7 +2141,7 @@ section {
     text-align: center;
     font-size: 0.95rem;
     color: var(--text-muted);
-    margin-bottom: var(--space-xl);
+    margin: 0 auto var(--space-xl) auto;
     max-width: 600px;
     line-height: 1.6;
 }
