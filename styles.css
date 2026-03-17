@@ -2166,7 +2166,7 @@ section {
 /* ===== Collaborative Memory Card ===== */
 .memory-card {
     position: relative;
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
     border: 1px solid rgba(139, 92, 246, 0.2);
     border-radius: 20px;
@@ -2208,7 +2208,7 @@ section {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
 }
 .memory-icon {
     width: 40px;
@@ -2236,10 +2236,10 @@ section {
     font-style: italic;
 }
 .memory-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--space-lg);
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
 }
 /* Category Tags */
 .category-tags {
@@ -2274,12 +2274,12 @@ section {
 .memory-form {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
 }
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: 2px;
 }
 .form-label {
     font-size: 0.8rem;
@@ -2309,7 +2309,7 @@ section {
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 .form-textarea {
-    min-height: 100px;
+    min-height: 80px;
     resize: vertical;
 }
 /* Form Tags */
@@ -2517,7 +2517,7 @@ section {
 /* ===== Direct Connection Card ===== */
 .connection-card {
     position: relative;
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.03));
     border: 1px solid rgba(99, 102, 241, 0.15);
     border-radius: var(--radius-lg);
@@ -2543,7 +2543,7 @@ section {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 .connection-icon {
     width: 40px;
