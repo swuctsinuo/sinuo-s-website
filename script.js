@@ -627,16 +627,21 @@
         const submitBtn = form.querySelector('.sync-btn');
         const memoryCard = form.closest('.memory-card');
 
+        console.log('Form tags found:', formTags.length);
+
         if (!submitBtn || !memoryCard) return;
 
         let selectedCategory = '自由话题';
 
         // Form tag selection
         formTags.forEach(tag => {
-            tag.addEventListener('click', () => {
+            tag.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Tag clicked:', tag.dataset.value);
                 formTags.forEach(t => t.classList.remove('active'));
                 tag.classList.add('active');
                 selectedCategory = tag.dataset.value;
+                console.log('Selected category:', selectedCategory);
             });
         });
 
