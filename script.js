@@ -614,9 +614,9 @@
         if (!form) return;
 
         // EmailJS Configuration - Replace with your own keys
-        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';      // 从 EmailJS 获取
-        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';      // 从 EmailJS 获取
-        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';    // 从 EmailJS 获取
+        const EMAILJS_PUBLIC_KEY = 'RO5CZO2-pDosL1sGB';        // EmailJS Public Key
+        const EMAILJS_SERVICE_ID = 'service_jo3id0m';      // EmailJS Service ID
+        const EMAILJS_TEMPLATE_ID = 'template_lz9cb9z';    // EmailJS Template ID
 
         // Initialize EmailJS
         if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
