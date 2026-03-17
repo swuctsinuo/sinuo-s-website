@@ -673,14 +673,15 @@
                     submit_time: new Date().toLocaleString('zh-CN')
                 };
 
-                // Send email via EmailJS (if configured)
-                if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-                    console.log('Email sent successfully');
+                console.log('Sending email with params:', templateParams);
+                console.log('EmailJS available:', typeof emailjs !== 'undefined');
+
+                // Send email via EmailJS
+                if (typeof emailjs !== 'undefined') {
+                    const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+                    console.log('Email sent successfully:', response);
                 } else {
-                    // Fallback: just log to console for demo
-                    console.log('Memory submission (demo mode):', templateParams);
-                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    throw new Error('EmailJS SDK not loaded');
                 }
 
                 // Add success state to card for full-card transform animation
@@ -688,7 +689,7 @@
 
             } catch (error) {
                 console.error('Submission error:', error);
-                alert('提交失败，请稍后重试');
+                alert('提交失败: ' + (error.message || error.text || '请稍后重试'));
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnContent;
             }
